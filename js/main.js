@@ -168,10 +168,23 @@ console.log(posts);
     let htmlTemplate = "";
     for (let post of posts) {
       console.log("OK3");
+      let image = "";
+    if (post.photos){image = post.photos[0].photo_reference}
       htmlTemplate += `
-        <article>
-          <p>${post.name}</p>
-        </article>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${image}&key=AIzaSyD7CULsQgweSRCbd3f2g7a-I8KOW99p4DA">
+              <span class="card-title">${post.name}</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Address: ${post.vicinity}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       `;
     }
     document.querySelector('#demo').innerHTML = htmlTemplate;
