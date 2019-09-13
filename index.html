@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <!-- main js file -->
+
 </head>
 
 <body>
@@ -26,7 +29,10 @@
     <header class="topbar">
       <h2>Settings</h2>
     </header>
-    <p>My Single Page Web App Template</p>
+    <div class="slidecontainer">
+      <input type="range" min="100" max="5000" value="1500" class="slider" id="myRange">
+      <p>Value: <span id="demo2"></span></p>
+    </div>
   </section>
 
   <!-- about page -->
@@ -34,15 +40,19 @@
     <header class="topbar">
       <h2>home</h2>
     </header>
-
-    <p>Choose your radius and then click the button to get restaurant at your location.</p>
-    <div class="slidecontainer">
-      <input type="range" min="100" max="5000" value="1500" class="slider" id="myRange">
-      <p>Value: <span id="demo2"></span></p>
-    </div>
-    <button onclick="getLocation()">Try It</button>
-
-    <p id="demo"></p>
+    <div class="stage">
+    <div class="title">What Kind of Traveler Are You?</div>
+      <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+        <div class="stackedcards-container">
+<div    id="demo"></div>
+</div>
+</div>
+</div>
+<div class="global-actions">
+  <div class="left-action"><img src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="26" height="26"/></div>
+  <div class="top-action"><img src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="18" height="16"/></div>
+  <div class="right-action"><img src="https://image.ibb.co/dCuESn/Path_3x.png" width="30" height="28"/></div>
+</div>
   </section>
 
   <!-- clients page -->
@@ -77,8 +87,8 @@
   <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <!-- main js file -->
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+
   <!-- materialize js file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
